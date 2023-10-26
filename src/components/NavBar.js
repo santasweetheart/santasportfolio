@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import {Navbar, Container} from "react-bootstrap";
-
+import logo from '../assets/img/logo.svg'
+import logo from '../assets/img/logo.svg'
+import logo from '../assets/img/logo.svg'
+import logo from '../assets/img/logo.svg'
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home'); //keep track of what links are clicked
     const [scolled, setScrolled] = useState(false); //keep track if the screen has scrolled 
