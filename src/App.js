@@ -8,6 +8,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from './components/Footer';
 import 'animate.css';
 
+
 function App() {
   return (
     <div className="App">
@@ -17,7 +18,6 @@ function App() {
       <Projects/>
       <Contact/>
       <Footer/>
-
     </div>
   );
 }
