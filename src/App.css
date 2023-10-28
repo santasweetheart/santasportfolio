@@ -499,6 +499,34 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
 }
 
+.proj-txtx button {
+  color: #000;
+  display:block;
+  background-color: #fff;
+  padding: 14px 48px;
+  margin-top: 50%;
+  margin-left: 25%;
+  border-radius: 40px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.proj-txtx button span {
+  z-index: 1;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.proj-txtx button:hover span{
+  font-weight: 700;
+}
+
+
+.proj-txtx button:hover::before {
+  width: 100%;
+}
+
 .background-image-right {
   top: 20%;
   position: absolute;
@@ -507,6 +535,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   right: 0;
   z-index: -4;
 }
+
+/*Project Modal*/
+.modalbody {
+  overflow-y: auto;
+  height: 70vh;
+}
+
+
+.carousel-container .carousel img,
+.carousel-container .carousel iframe {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0 10% 5% 10%;
+}
+
+
+
+
 
 /*Contact  CSS*/
 
