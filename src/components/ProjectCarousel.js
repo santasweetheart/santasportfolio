@@ -2,7 +2,7 @@ import {Col, Carousel } from "react-bootstrap";
 import img1 from "../assets/img/project-img1.png";
 import img2 from "../assets/img/blackwoman.png";
 
-
+//Need to make this dynamic
 
 export const ProjectCarousel = () => {
   return (

@@ -2,6 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import colorSharp from "../assets/img/color-sharp.png"
 
+//changing the way this looks will have pictures pertaining to languages and tools in tech stack 
+
 export const Skills = () => {
 
       return (

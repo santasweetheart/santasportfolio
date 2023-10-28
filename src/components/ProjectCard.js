@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Col } from "react-bootstrap";
 import { ProjectModal } from "./ProjectModal";
 
-
+//will need to pull from projects dataset
 export const ProjectCard = ({title, description, imgUrl}) => {
-  
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
