@@ -550,7 +550,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 0 10% 5% 10%;
 }
 
-
+.modaltitle{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.modaltitle h2,
+.projectinfo {
+  color: #121212;
+}
 
 
 
