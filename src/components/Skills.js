@@ -1,10 +1,19 @@
 import { Col, Container, Row, Table } from "react-bootstrap";
+import { SkillPill } from "./SkillPill"
 
 import colorSharp from "../assets/img/color-sharp.png"
+import testIcon from "../assets/img/skill-icons/axure.svg";
+
 
 //changing the way this looks will have pictures pertaining to languages and tools in tech stack 
 
 export const Skills = () => {
+    const skillpilldata = 
+    [
+        {skill: "Axure",
+        source: testIcon,
+        category: "tool"},
+    ];
 
       return (
         <section className="skill" id="skills">
@@ -21,11 +30,29 @@ export const Skills = () => {
                                 <tbody>
                                     <tr>
                                         <td>Languages & Frameworks</td>
-                                        <td>Tech Stackhfgftyfjyfyfkyfjfyfjtfjtd</td>
+                                        <td>
+                                            {
+                                            skillpilldata.map((skillpill, index) => {
+                                               
+                                                if (skillpill.category === 'langauge' || skillpill.category === 'framework' ) {
+                                                    return <SkillPill key={index} {...skillpill}/>;
+                                                }
+                                            })
+                                            }
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Tools</td>
-                                        <td>Tech Stack</td>
+                                        <td>
+                                            {
+                                            skillpilldata.map((skillpill, index) => {
+                                               
+                                                if (skillpill.category === 'tool' ) {
+                                                    return <SkillPill key={index} {...skillpill}/>;
+                                                }
+                                            })
+                                            }
+                                        </td>
                                     </tr>
                                 </tbody>
                             </Table>

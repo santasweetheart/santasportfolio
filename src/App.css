@@ -343,15 +343,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 14px 0 75px 0;
 }
 
-.skill-slider {
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
+.skillpill{
+  display: flex;
+  margin-left: 10px;
+  border: 2px solid #fff; /* Add border property */
+  border-radius: 30px; /* Optional: to make the border rounded */
+  width: 170px;
+  height: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.skill-slider .item img {
-  width: 50%;
-  margin: 0 auto 15px auto;
+.skillpill img {
+  width: 50%
+}
+
+.skillpill p {
+  margin-left: 5px;
+  padding-top: 15%;
 }
 
 .background-image-left {
@@ -361,6 +370,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 40%;
   z-index: -4;
 }
+
+
 
 /*Projects*/
 
