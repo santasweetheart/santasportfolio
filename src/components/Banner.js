@@ -6,7 +6,7 @@ import headerImg from "../assets/img/header-img.svg";
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0); //index of which word is currently displayed on screen
     const [isDeleting, setIsDeleting] = useState(false); //whetehr word is deleting or not
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"] //list of words to display on screen in rotated manner
+    const toRotate = ["A UI/UX Designer","A Web Developer", "A Full Stack Developer", "A Mobile App Developer"] //list of words to display on screen in rotated manner
     const [text, setText] = useState(''); //the current text being displayed on screen
     const [delta, setDelta] = useState(300 - Math.random() * 100); //Determines how fast one letter appears after the first one is typed or deleted. It starts with a random value between 200 and 300.
     const PERIOD = 2000; //Defines the time interval between each word being typed out (2 seconds).
@@ -51,9 +51,9 @@ export const Banner = () => {
         </Container>
             <Row className="align-items-center">
                 <Col xs={12} md={6} xl={7}>
-                    <span className="tagline">Blurb</span>
-                    <h1>{"Hi I'm Santa "} <span className="wrap">{text}</span></h1>
-                    <p>About me stuff in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget</p>
+                    <span className="tagline">Hi! Welcome to my portfolio</span>
+                    <h1>{"Hi! My name is Santa. "} <br/><span className="txt-rotate"> <span className="wrap">{text}</span></span></h1>
+                    <p>A usability enthusiast and tech-obsessed nerd. Building and designing human-centered digital experiences is where I shine. Currently, I'm on the lookout for new opportunities where I can contribute, grow, and continue to turn creative ideas into reality.</p>
                     <button onClick={() => console.log('connect')}>Connect with me! <ArrowRightCircle size={25}/></button>
                 </Col>
                 <Col xs={12} md={6} xl={5}>

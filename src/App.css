@@ -229,7 +229,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /*Banner CSS*/
 
 .banner {
-  text-align: center;
   margin-top: 0;
   margin-left: 5px;
   padding: 260px 0 100px 0;
@@ -247,6 +246,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
+  margin-left: 5%;
   display: inline-block;
 }
 
@@ -256,6 +256,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   line-height: 1;
   margin-bottom: 20px;
+  margin-left: 5%;
   display: block;
 }
 
@@ -265,6 +266,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
+  margin-left: 5%;
+  padding-right: 20%;
 }
 
 .banner button {
@@ -275,8 +278,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 10px 20px;
   font-weight: 700;
   font-size: 20px;
-  margin-left: 35%;
-  margin-top: 50px;
+  margin-left: 5%;
+  margin-top: 45px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
