@@ -330,6 +330,59 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: -60px;
 }
 
+.skill-containers {
+  background: #ffffff;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 40px;
+  margin-top: -60px;
+  display: flex;
+}
+
+/* Add borders to all columns except the last one */
+.skill-containers .col:not(:last-child) {
+  border-right: 2px solid #ddd; /* Adjust color and width as needed */
+}
+
+.skill-containers .col:nth-child(3) {
+  border-right: none;
+}
+
+.skill-containers .col {
+  display: flex; /* Make the column a flex container */
+  flex-direction: column; /* Stack the children of the column vertically */
+  justify-content: center; /* Center the items vertically if there's extra space */
+  height: 100%; /* Make the column take up full height of its parent */
+}
+
+.skill-containers span img,
+.skill-containers img {
+  height: 60px;
+  width: 60px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+
+.skill-containers h3 {
+  color: #4A2FBD;
+}
+
+.skill-containers h5 {
+  color: #000;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.skill-containers .col p {
+  color: #000;
+  font-size: 15px;
+}
+
+.developer-tools{
+  border-top: 2px solid #ddd;
+}
+
 .skill h2 {
   font-size: 45px;
   font-weight: 700;
