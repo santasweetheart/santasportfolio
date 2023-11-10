@@ -52,7 +52,7 @@ export const Banner = () => {
             <Row className="align-items-center">
                 <Col xs={12} md={6} xl={7}>
                     <span className="tagline">Hi! Welcome to my portfolio</span>
-                    <h1>{"Hi! My name is Santa. "} <br/><span className="txt-rotate"> <span className="wrap">{text}</span></span></h1>
+                    <h1>{"My name is Santa. "} <br/><span className="txt-rotate"> <span className="wrap">{text}</span></span></h1>
                     <p>A usability enthusiast and tech-obsessed nerd. Building and designing human-centered digital experiences is where I shine. Currently, I'm on the lookout for new opportunities where I can contribute, grow, and continue to turn creative ideas into reality.</p>
                     <button onClick={() => console.log('connect')}>Connect with me! <ArrowRightCircle size={25}/></button>
                 </Col>
