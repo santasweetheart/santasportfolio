@@ -318,6 +318,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
+
 /* Skills CSS */
 
 .skill {

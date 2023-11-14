@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {ArrowRightCircle} from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/websiteicon.svg";
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0); //index of which word is currently displayed on screen
@@ -51,10 +51,10 @@ export const Banner = () => {
         </Container>
             <Row className="align-items-center">
                 <Col xs={12} md={6} xl={7}>
-                    <span className="tagline">Hi! Welcome to my portfolio</span>
+                    <span className="tagline">Hi! Welcome to my portfolio :)</span>
                     <h1>{"My name is Santa. "} <br/><span className="txt-rotate"> <span className="wrap">{text}</span></span></h1>
                     <p>A usability enthusiast and tech-obsessed nerd. Building and designing human-centered digital experiences is where I shine. Currently, I'm on the lookout for new opportunities where I can contribute, grow, and continue to turn creative ideas into reality.</p>
-                    <button onClick={() => console.log('connect')}>Connect with me! <ArrowRightCircle size={25}/></button>
+                    <a href="https://drive.google.com/file/d/1fUlc6HNkd9doMpCJcMKoJ-WnzBuoLqrR/view?usp=sharing" target="_blank" className="no-underline"><button>Connect with me! <ArrowRightCircle size={25}/></button></a>
                 </Col>
                 <Col xs={12} md={6} xl={5}>
                     <img src={headerImg} alt="Header Img"/>
