@@ -4,40 +4,32 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
+import paw1 from "../assets/img/projects/pawssibilites/add_new_listings.png";
+import paw2 from "../assets/img/projects/pawssibilites/advanced_search_component.png";
+import paw3 from "../assets/img/projects/pawssibilites/advanced_search_screen.png";
+import paw4 from "../assets/img/projects/pawssibilites/advanced_search_results.png";
+import paw5 from "../assets/img/projects/pawssibilites/favorites_page.png";
+import paw6 from "../assets/img/projects/pawssibilites/home_screen_anonymous.png";
+import paw7 from "../assets/img/projects/pawssibilites/listings_page.png";
+import paw8 from "../assets/img/projects/pawssibilites/login_screen.png";
+import paw9 from "../assets/img/projects/pawssibilites/profile_page.png";
+import paw10 from "../assets/img/projects/pawssibilites/profile_settings_page.png";
+import paw11 from "../assets/img/projects/pawssibilites/register_page.jpeg";
+import paw12 from "../assets/img/projects/pawssibilites/registered_user_home.png";
+import pawthumbnial from "../assets/img/projects/pawssibilites/pawthumbnail.png";
 
 // will pull from a data set I make later
 export const Projects = () => {
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Pawssibilites",
+      description: "A full-stack responsive pet adoption social media platform with the purpose of helping facilitate pet adoption.",
+      techstack: ["HTML", "CSS", "Bootstrap", "React","Redux", "Javascript", "MongoDB", "PetFinder Api", "Node.js", "Render.js", "Figma", "VS Code"],
+      imgUrl: pawthumbnial,
+      carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+      youtubeLink: "",
     },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
+    
   ];
 
   return (

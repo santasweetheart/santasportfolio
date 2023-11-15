@@ -527,6 +527,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 24px;
 }
 
+
+
 .proj-imgbx::before {
   content: "";
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
@@ -551,6 +553,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 0;
   width: 100%;
 }
+
+
 
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
