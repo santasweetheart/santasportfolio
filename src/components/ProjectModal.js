@@ -1,5 +1,5 @@
 
-import { Modal, Row, Col, Carousel} from "react-bootstrap";
+import { Modal, Row, Col} from "react-bootstrap";
 import { ProjectCarousel } from "./ProjectCarousel";
 
 //will need to pull from prjects database
