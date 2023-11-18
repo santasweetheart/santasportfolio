@@ -1,4 +1,4 @@
-import { Container, TabContent, Tab, Nav, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import paw1 from "../assets/img/projects/pawssibilites/add_new_listings.png";
@@ -25,8 +25,55 @@ export const Projects = () => {
       imgUrl: pawthumbnial,
       carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
       youtubeLink: "https://youtu.be/U_kYwgI50bA",
-      filter: "fullstack",
+      github: "",
     },
+    {
+    title: "TravelTrove",
+    description: "An iOS app that simplifies trip packing and insurance claiom processes as well as ensuring luggage security.",
+    techstack: ["Swift","Firebase Authenticaation", "Firebase Authentication", "Firebase Database", "Friebase Storage", "Figma", "CocoaPods", "Xcode", "Github"],
+    imgUrl: pawthumbnial,
+    carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+    youtubeLink: "https://youtu.be/ppQbZGwcgfw",
+    github: "",
+  },
+  {
+    title: "Covey Town Disco Room",
+    description: "Implemented test-driven design and object-oriented programming to add disco room functionality to open-source virtual meeting platform ",
+    techstack: ["TypeScript", "React", "Phaser"],
+    imgUrl: pawthumbnial,
+    carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+    youtubeLink: "https://youtu.be/TsE72gMP5ew",
+    github: "",
+  },
+
+  {
+    title: "Apprentice Learning",
+    description: "A data visualization initiative where authentic data from Apprentice Learning was analyzed and transformed into a dynamic, interactive visual representation.",
+    techstack: ["D3", "JavaScript", "HTML", "CSS", "VS Code", "Github"],
+    imgUrl: pawthumbnial,
+    carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+    youtubeLink: "https://youtu.be/vNzM3JfxHNk",
+    github: "",
+  },
+  {
+    title: "Image Processor",
+    description: "Description Pending",
+    techstack: ["Java", "Java Swing"],
+    imgUrl: pawthumbnial,
+    carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+    youtubeLink: "",
+    github: "",
+  },
+  {
+    title: "co-opportuniti",
+    description: "Description Pending",
+    techstack: ["Java", "Java Swing"],
+    imgUrl: pawthumbnial,
+    carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+    youtubeLink: "",
+    github: "",
+  },
+    
 
     
   ];
@@ -38,65 +85,19 @@ export const Projects = () => {
           <Col>
             <h2>Projects</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+            Discover a diverse range of projects that embody my journey in software development, from sleek user interfaces to complex full-stack solutions. 
+            Each piece in this collection highlights my dedication to building impactful and innovative technology.
+             Browse through to witness how my expertise translates into real-world applications that prioritize both form and function.
             </p>
-            <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                <Nav.Item>
-                  <Nav.Link eventKey="first">Frontend</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="second">Full Stack</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="third">UX/UI</Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <TabContent>
-                <Tab.Pane eventKey="first">
-                  <Row>
-                      {
-                        projects.filter(project => project.filter === "frontend").map((project, index) =>{
-                          return (
-                            <ProjectCard key={index} {...project} />
-                          )
-                        })
-                      }
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="second">
-                  <Row>
-                    {
-                      // Filter the projects array to only include projects with filter "fullstack"
-                      projects.filter(project => project.filter === "fullstack").map((project, index) =>{
-                        return (
-                          <ProjectCard key={index} {...project} />
-                        )
-                      })
-                    }
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="third">
-                <Row>
-                    {
-                      // Filter the projects array to only include projects with filter "fullstack"
-                      projects.filter(project => project.filter === "ui/ux").map((project, index) =>{
-                        return (
-                          <ProjectCard key={index} {...project} />
-                        )
-                      })
-                    }
-                  </Row>
-                </Tab.Pane>
-              </TabContent>
-            </Tab.Container>
-          </Col>
+            </Col>
+        </Row>
+        <Row>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}/>
+      <img className="background-image-right" src={colorSharp2} alt="Decorative background" />
     </section>
   );
 };
