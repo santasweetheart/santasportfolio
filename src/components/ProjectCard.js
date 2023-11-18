@@ -2,27 +2,29 @@ import { useState } from "react";
 import { Col } from "react-bootstrap";
 import { ProjectModal } from "./ProjectModal";
 
-//will need to pull from projects dataset
-export const ProjectCard = ({title, description, imgUrl}) => {
-
+// The project properties are now accepted as an object named 'props'
+export const ProjectCard = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-    return (
-      <Col size={12} sm={6} md={4}>
-        <div className="proj-imgbx">
-          <img src={imgUrl} />
-          <div className="proj-txtx">
-            <h4>{title}</h4>
-            <span>{description}</span>
-            <span></span>
-            <button type="button" onClick={handleShow}>
-              <span>Gallery</span>
-            </button>
-          </div>
-          <ProjectModal show={show} handleClose={handleClose} />
+  // Destructure the props to use in the component
+  const { title, description, techstack, imgUrl, carouselImgs, youtubeLink, github } = props;
+
+  return (
+    <Col size={12} sm={6} md={4}>
+      <div className="proj-imgbx" onClick={handleShow}>
+        <img src={imgUrl} alt={`Project ${title}`} />
+        <div className="proj-txtx">
+          <h4>{title}</h4>
+          <span>{description}</span>
+          <button type="button">
+            <span>Gallery</span>
+          </button>
         </div>
-      </Col>
-    );
+      </div>
+      {/* Pass the entire 'props' object to the ProjectModal component */}
+      <ProjectModal show={show} handleClose={handleClose} projprops={props} />
+    </Col>
+  );
 }

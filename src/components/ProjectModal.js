@@ -3,8 +3,9 @@ import { Modal, Row, Col} from "react-bootstrap";
 import { ProjectCarousel } from "./ProjectCarousel";
 
 //will need to pull from prjects database
-export const ProjectModal = ({ show, handleClose }) => {
-
+export const ProjectModal = ({ show, handleClose, projprops}) => {
+    // Destructure the props to use in the component
+   const { title, description, techstack, imgUrl, carouselImgs, youtubeLink, github } = projprops;
     return(
         <>
         <Modal size="xl" centered show={show} onHide={handleClose} animation={false}>
@@ -13,10 +14,20 @@ export const ProjectModal = ({ show, handleClose }) => {
           </Modal.Header>
           <Modal.Body>
             <Row className="modalbody">
-              <ProjectCarousel/>
+              <ProjectCarousel images={carouselImgs} youtube={youtubeLink}/>
                 <Col xs={6} md={3} className="projectinfo">
                     <p>Tech Stack</p> 
-                    <button type="button">Github</button>  /** this button should only appear if there is a code base so if that feild is ture or false*/
+                   <ul>
+                      {techstack.map((tech, index) => (
+                        <li key={index}>{tech}</li>
+                      ))}
+                  </ul>
+                  {/* Conditionally render the GitHub button */}
+                  {github && (
+                    <a href={github} target="_blank" rel="noopener noreferrer">
+                      <button type="button">GitHub</button>
+                    </a>
+                  )}
                 </Col>
             </Row>
           </Modal.Body>

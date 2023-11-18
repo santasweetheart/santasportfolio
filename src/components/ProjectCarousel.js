@@ -4,7 +4,7 @@ import img2 from "../assets/img/blackwoman.png";
 
 //Need to make this dynamic
 
-export const ProjectCarousel = () => {
+export const ProjectCarousel = ({images, youtube}) => {
   return (
     <>
     <Col xs={12} md={9} className="carousel-container">
