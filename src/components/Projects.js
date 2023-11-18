@@ -24,7 +24,7 @@ export const Projects = () => {
       techstack: ["HTML", "CSS", "Bootstrap", "React","Redux", "Javascript", "MongoDB", "PetFinder Api", "Node.js", "Render.js", "Figma", "VS Code"],
       imgUrl: pawthumbnial,
       carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
-      youtubeLink: "https://youtu.be/U_kYwgI50bA",
+      youtubeLink: "https://www.youtube.com/embed/U_kYwgI50bA?si=SsIGCxJO1Vyx0psW",
       github: "",
     },
     {
@@ -33,7 +33,7 @@ export const Projects = () => {
     techstack: ["Swift","Firebase Authenticaation", "Firebase Authentication", "Firebase Database", "Friebase Storage", "Figma", "CocoaPods", "Xcode", "Github"],
     imgUrl: pawthumbnial,
     carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
-    youtubeLink: "https://youtu.be/ppQbZGwcgfw",
+    youtubeLink: "https://www.youtube.com/embed/ppQbZGwcgfw?si=zaFaRCMUzA9yhTgF",
     github: "",
   },
   {
@@ -42,7 +42,7 @@ export const Projects = () => {
     techstack: ["TypeScript", "React", "Phaser"],
     imgUrl: pawthumbnial,
     carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
-    youtubeLink: "https://youtu.be/TsE72gMP5ew",
+    youtubeLink: "https://www.youtube.com/embed/TsE72gMP5ew?si=zrMg8drN43c0tpkm",
     github: "",
   },
 
@@ -52,7 +52,7 @@ export const Projects = () => {
     techstack: ["D3", "JavaScript", "HTML", "CSS", "VS Code", "Github"],
     imgUrl: pawthumbnial,
     carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
-    youtubeLink: "https://youtu.be/vNzM3JfxHNk",
+    youtubeLink: "https://www.youtube.com/embed/vNzM3JfxHNk?si=OjOIBUtTUlr26NHC",
     github: "",
   },
   {
