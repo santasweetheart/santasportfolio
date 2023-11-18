@@ -21,14 +21,46 @@ export const Projects = () => {
     {
       title: "Pawsibilites",
       description: "A full-stack responsive pet adoption social media platform with the purpose of helping facilitate pet adoption.",
-      techstack: ["HTML", "CSS", "Bootstrap", "React","Redux", "Javascript", "MongoDB", "PetFinder Api", "Node.js", "Render.js", "Figma", "VS Code"],
+      techstack: ["HTML", "CSS", "Bootstrap", "React","Redux", "Javascript", "MongoDB", "PetFinder Api", "Node.js", "Render.js", "Figma", "VS Code", "Github"],
       imgUrl: pawthumbnial,
       carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
       youtubeLink: "https://youtu.be/U_kYwgI50bA",
       filter: "fullstack",
+      github: "",
     },
-
+    {
+      title: "TravelTrove",
+      description: "An iOS app that simplifies trip packing and insurance claiom processes as well as ensuring luggage security.",
+      techstack: ["Swift","Firebase Authenticaation", "Firebase Authentication", "Firebase Database", "Friebase Storage", "Figma", "CocoaPods", "Xcode", "Github"],
+      imgUrl: pawthumbnial,
+      carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+      youtubeLink: "https://youtu.be/ppQbZGwcgfw",
+      filter: "fullstack",
+      github: "",
+    },
+    {
+      title: "Apprentice Learning",
+      description: "A data visualization initiative where authentic data from Apprentice Learning was analyzed and transformed into a dynamic, interactive visual representation.",
+      techstack: ["D3", "JavaScript", "HTML", "CSS", "VS Code", "Github"],
+      imgUrl: pawthumbnial,
+      carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+      youtubeLink: "https://youtu.be/vNzM3JfxHNk",
+      filter: "frontend",
+      github: "",
+    },
+    {
+      title: "Image Processor",
+      description: "Description Pending",
+      techstack: ["Java", "Java Swing"],
+      imgUrl: pawthumbnial,
+      carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
+      youtubeLink: "",
+      filter: "fullstack",
+      github: "",
+    },
     
+
+
   ];
 
   return (
@@ -38,10 +70,8 @@ export const Projects = () => {
           <Col>
             <h2>Projects</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+            Explore my handpicked collection of software projects, showcasing expertise in delivering both front-end elegance and full-stack robustness. 
+            These creations represent my commitment to innovation and practical design in solving real-world challenges.
             </p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
               <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
@@ -59,6 +89,7 @@ export const Projects = () => {
                 <Tab.Pane eventKey="first">
                   <Row>
                       {
+                         // Filter the projects array to only include projects with filter "frontend"
                         projects.filter(project => project.filter === "frontend").map((project, index) =>{
                           return (
                             <ProjectCard key={index} {...project} />
@@ -82,7 +113,7 @@ export const Projects = () => {
                 <Tab.Pane eventKey="third">
                 <Row>
                     {
-                      // Filter the projects array to only include projects with filter "fullstack"
+                      // Filter the projects array to only include projects with filter "ui/ux"
                       projects.filter(project => project.filter === "ui/ux").map((project, index) =>{
                         return (
                           <ProjectCard key={index} {...project} />
