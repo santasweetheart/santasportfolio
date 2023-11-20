@@ -9,7 +9,7 @@ export const ProjectCard = (props) => {
   const handleShow = () => setShow(true);
 
   // Destructure the props to use in the component
-  const { title, description, techstack, imgUrl, carouselImgs, youtubeLink, github } = props;
+  const { title, description, techstack, imgUrl, carouselImgs, youtubeLink, github, livewebsite } = props;
 
   return (
     <Col size={12} sm={6} md={4}>
@@ -17,7 +17,7 @@ export const ProjectCard = (props) => {
         <img src={imgUrl} alt={`Project ${title}`} />
         <div className="proj-txtx">
           <h4>{title}</h4>
-          <span>{description}</span>
+          <span className="card-description">{description}</span>
           <button type="button">
             <span>Gallery</span>
           </button>
