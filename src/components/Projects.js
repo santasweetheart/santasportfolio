@@ -15,7 +15,7 @@ import paw11 from "../assets/img/projects/pawssibilites/register_page.jpeg";
 import paw12 from "../assets/img/projects/pawssibilites/registered_user_home.png";
 import pawthumbnial from "../assets/img/projects/pawssibilites/pawthumbnail.png";
 
-// will pull from a data set I make later
+
 export const Projects = () => {
   const projects = [
     {
