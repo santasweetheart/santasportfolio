@@ -1,6 +1,10 @@
-import { Container, TabContent, Tab, Nav, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
+import pawthumbnial from "../assets/img/projects/pawssibilites/pawthumbnail.png";
+import  aplearnthumbnail from "../assets/img/projects/apprenticelearning/apprenticethumbnail.png";
+import  traveltrovethumbnail from "../assets/img/projects/traveltrove/traveltrovethumbnail.png";
+import  discoroomthumbnail from "../assets/img/projects/discoroomarea/discoroomthumbnail.png";
 import paw1 from "../assets/img/projects/pawssibilites/add_new_listings.png";
 import paw2 from "../assets/img/projects/pawssibilites/advanced_search_component.png";
 import paw3 from "../assets/img/projects/pawssibilites/advanced_search_screen.png";
@@ -13,21 +17,59 @@ import paw9 from "../assets/img/projects/pawssibilites/profile_page.png";
 import paw10 from "../assets/img/projects/pawssibilites/profile_settings_page.png";
 import paw11 from "../assets/img/projects/pawssibilites/register_page.jpeg";
 import paw12 from "../assets/img/projects/pawssibilites/registered_user_home.png";
-import pawthumbnial from "../assets/img/projects/pawssibilites/pawthumbnail.png";
+import t1 from "../assets/img/projects/traveltrove/intropage.png";
+import t2 from "../assets/img/projects/traveltrove/login.png";
+import t3 from "../assets/img/projects/traveltrove/signup.png";
+import t4 from "../assets/img/projects/traveltrove/landing.png";
+import t5 from "../assets/img/projects/traveltrove/yourlist.png";
+import t6 from "../assets/img/projects/traveltrove/indivlidualist.png";
+import t7 from "../assets/img/projects/traveltrove/addcollaborators.png";
+import t8 from "../assets/img/projects/traveltrove/importantdocs.png";
+import t9 from "../assets/img/projects/traveltrove/imageindoc.png";
 
-// will pull from a data set I make later
 export const Projects = () => {
   const projects = [
     {
       title: "Pawsibilites",
-      description: "A full-stack responsive pet adoption social media platform with the purpose of helping facilitate pet adoption.",
-      techstack: ["HTML", "CSS", "Bootstrap", "React","Redux", "Javascript", "MongoDB", "PetFinder Api", "Node.js", "Render.js", "Figma", "VS Code"],
+      description: "A full-stack responsive, pet adoption social media platform with the purpose of helping facilitate pet adoption.",
+      techstack: ["HTML", "CSS/Sass", "Bootstrap", "React","Redux", "Javascript", "MongoDB", "PetFinder Api", "Node.js", "Render.js", "Figma", "VS Code"],
       imgUrl: pawthumbnial,
       carouselImgs: [paw8, paw11, paw12, paw6, paw7, paw1, paw5, paw2, paw3, paw4, paw9, paw10],
-      youtubeLink: "https://youtu.be/U_kYwgI50bA",
-      filter: "fullstack",
+      youtubeLink: "https://www.youtube.com/embed/U_kYwgI50bA?si=SsIGCxJO1Vyx0psW",
+      github: "",
+      livewebsite: "",
     },
+    {
+    title: "TravelTrove",
+    description: "An iOS app that simplifies trip packing and insurance claim processes as well as ensuring luggage security.",
+    techstack: ["Swift","Firebase Authenticaation", "Firebase Authentication", "Firebase Database", "Friebase Storage", "Figma", "CocoaPods", "Xcode", "Github"],
+    imgUrl: traveltrovethumbnail,
+    carouselImgs: [t1, t2, t3, t4, t5, t6, t7, t8, t9],
+    youtubeLink: "https://www.youtube.com/embed/ppQbZGwcgfw?si=zaFaRCMUzA9yhTgF",
+    github: "https://github.com/santasweetheart/traveltrove.git",
+    livewebsite: "",
+  },
+  {
+    title: "Covey Town Disco Room",
+    description: "Implemented test-driven design and object-oriented programming to add disco room functionality to Covey Town, a open-source virtual meeting platform. ",
+    techstack: ["TypeScript", "JavaScript", "React", "Phaser", "REST API", "Material UI", "Chakra UI"],
+    imgUrl: discoroomthumbnail,
+    carouselImgs: [],
+    youtubeLink: "https://www.youtube.com/embed/TsE72gMP5ew?si=zrMg8drN43c0tpkm",
+    github: "",
+    livewebsite: "",
+  },
 
+  {
+    title: "Apprentice Learning",
+    description: "A data visualization initiative where authentic data from Apprentice Learning was analyzed and transformed into a dynamic, interactive visual representation.",
+    techstack: ["D3", "JavaScript", "HTML", "CSS", "VS Code", "Github"],
+    imgUrl: aplearnthumbnail,
+    carouselImgs: [],
+    youtubeLink: "https://www.youtube.com/embed/vNzM3JfxHNk?si=OjOIBUtTUlr26NHC",
+    github: "",
+    livewebsite: "https://santasweetheart.github.io/apprenticelearning/",
+  },
     
   ];
 
@@ -38,65 +80,19 @@ export const Projects = () => {
           <Col>
             <h2>Projects</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+            Discover a diverse range of projects that embody my journey in software development, from sleek user interfaces to complex full-stack solutions. 
+            Each piece in this collection highlights my dedication to building impactful and innovative technology.
+             Browse through to witness how my expertise translates into real-world applications that prioritize both form and function.
             </p>
-            <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                <Nav.Item>
-                  <Nav.Link eventKey="first">Frontend</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="second">Full Stack</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="third">UX/UI</Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <TabContent>
-                <Tab.Pane eventKey="first">
-                  <Row>
-                      {
-                        projects.filter(project => project.filter === "frontend").map((project, index) =>{
-                          return (
-                            <ProjectCard key={index} {...project} />
-                          )
-                        })
-                      }
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="second">
-                  <Row>
-                    {
-                      // Filter the projects array to only include projects with filter "fullstack"
-                      projects.filter(project => project.filter === "fullstack").map((project, index) =>{
-                        return (
-                          <ProjectCard key={index} {...project} />
-                        )
-                      })
-                    }
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="third">
-                <Row>
-                    {
-                      // Filter the projects array to only include projects with filter "fullstack"
-                      projects.filter(project => project.filter === "ui/ux").map((project, index) =>{
-                        return (
-                          <ProjectCard key={index} {...project} />
-                        )
-                      })
-                    }
-                  </Row>
-                </Tab.Pane>
-              </TabContent>
-            </Tab.Container>
-          </Col>
+            </Col>
+        </Row>
+        <Row>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}/>
+      <img className="background-image-right" src={colorSharp2} alt="Decorative background" />
     </section>
   );
 };
