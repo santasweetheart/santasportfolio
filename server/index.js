@@ -3,15 +3,28 @@ const express = require("express");
 const cors = require('cors');
 const nodemailer = require("nodemailer");
 const bodyParser = require('body-parser');
+const WebSocket = require('wss');
 require('dotenv').config()
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+const server = require('http').createServer(app);
+const wss = new WebSocket.Server({ server });
+
+// WebSocket connection
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
+
+  ws.send('Hello from WebSocket server!');
+});
 
 app.use(express.static(path.resolve(__dirname, '../build')));
 app.use(cors())
 app.use(bodyParser.json());
+
 
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
