@@ -24,28 +24,46 @@ export const Contact = () => {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setButtonText("Sending...");
-
-      let response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formDetails),
-      });
-
-      setButtonText("Send");
-
-      let result = await response.json();
-
-      setFormDetails(formInitialDetails);
-      if (result.code == 200) {
-        setStatus({ succes: true, message: 'Message sent successfully'});
-      } else {
-        setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+    
+      // Logging the form data before sending
+      console.log('Form data before sending:', { contactname, email, phone, message });
+    
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            contactname,
+            email,
+            phone,
+            message,
+          }),
+        });
+    
+        // Logging the response status and response object
+        console.log('Response status:', response.status);
+        console.log('Response:', response);
+    
+        const data = await response.json();
+    
+        // Logging the response data
+        console.log('Response data:', data);
+    
+        if (response.status === 200) {
+          alert('Message sent successfully');
+          // ... rest of your success logic (resetting the form, etc.)
+        } else {
+          alert('Failed to send message');
+          // ... rest of your error handling
+        }
+      } catch (error) {
+        // Logging any error during form submission
+        console.error('Error during form submission:', error);
       }
     };
+    
 
     return (
       <section className="contact" id="connect">
