@@ -25,26 +25,44 @@ export const Contact = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       setButtonText("Sending...");
-      let response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify(formDetails),
-      });
-      
-      setButtonText("Send");
-      let result = await response.json();
-      setFormDetails(formInitialDetails);
-      if (result.code == 200) {
-        setStatus({ succes: true, message: "Message sent successfully" });
-      } else {
-        setStatus({
-          succes: false,
-          message: "Something went wrong, please try again later.",
+    
+      try {
+        let response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify(formDetails),
         });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+    
+        let result = await response.json();
+    
+        if (response.ok) {
+          setStatus({ success: true, message: "Message sent successfully" });
+        } else {
+          // Handle non-200 responses
+          setStatus({
+            success: false,
+            message: result.message || "Something went wrong, please try again later.",
+          });
+        }
+      } catch (error) {
+        // Handle network errors or issues with the fetch operation
+        setStatus({
+          success: false,
+          message: "Failed to send message. Please try again later.",
+        });
+      } finally {
+        // Reset button text and form fields regardless of request outcome
+        setButtonText("Send");
+        setFormDetails(formInitialDetails);
       }
     };
+    
     
 
     return (
