@@ -5,11 +5,11 @@ import contactImg from "../assets/img/contact-img.svg";
 
 export const Contact = () => {
     const formInitialDetails = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: ''
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: ""
     }
     const [formDetails, setFormDetails] = useState(formInitialDetails); //stores form details 
     const [buttonText, setButtonText] = useState('Send'); 
@@ -24,6 +24,9 @@ export const Contact = () => {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
+
+      // Extracting values from formDetails state
+      const { firstName, lastName, email, phone, message } = formDetails;
     
       // Logging the form data before sending
       console.log('Form data before sending:', { firstName, lastName, email, phone, message });
