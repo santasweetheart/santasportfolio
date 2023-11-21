@@ -26,7 +26,7 @@ export const Contact = () => {
       e.preventDefault();
     
       // Logging the form data before sending
-      console.log('Form data before sending:', { contactname, email, phone, message });
+      console.log('Form data before sending:', { firstName, lastName, email, phone, message });
     
       try {
         const response = await fetch('/api/contact', {
@@ -35,7 +35,8 @@ export const Contact = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            contactname,
+            firstName,
+            lastName,
             email,
             phone,
             message,
