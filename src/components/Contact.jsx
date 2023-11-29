@@ -1,69 +1,87 @@
-import { useState } from "react";
+import { useState, useRef} from "react";
+import emailjs from '@emailjs/browser';
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 
+const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 
 export const Contact = () => {
-    const formInitialDetails = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: ""
-    }
-    const [formDetails, setFormDetails] = useState(formInitialDetails); //stores form details 
+    const form = useRef();
     const [buttonText, setButtonText] = useState('Send'); 
     const [status, setStatus] = useState({});
   
-    const onFormUpdate = (category, value) => {
-        setFormDetails({
-          ...formDetails,
-          [category]: value
-        })
-    }
   
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
       e.preventDefault();
-      setButtonText("Sending...");
+      setButtonText("Validating Inputs...");
     
-      try {
-        let response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json;charset=utf-8",
-          },
-          body: JSON.stringify(formDetails),
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+      // Check if any field is empty
+      const inputs = form.current.querySelectorAll("input, textarea");
+      const isAnyFieldEmpty = Array.from(inputs).some(input => !input.value.trim());
     
-        let result = await response.json();
-    
-        if (response.ok) {
-          setStatus({ success: true, message: "Message sent successfully" });
-        } else {
-          // Handle non-200 responses
+      if (isAnyFieldEmpty) {
+        const missingFieldsMessage = "Please fill in all the fields.";
+        setTimeout(() => {
           setStatus({
             success: false,
-            message: result.message || "Something went wrong, please try again later.",
+            message: missingFieldsMessage
           });
-        }
-      } catch (error) {
-        // Handle network errors or issues with the fetch operation
-        setStatus({
-          success: false,
-          message: "Failed to send message. Please try again later.",
-        });
-      } finally {
-        // Reset button text and form fields regardless of request outcome
-        setButtonText("Send");
-        setFormDetails(formInitialDetails);
+        }, 1000)
+
+        // Reset status after 3 seconds
+        setTimeout(() => {
+          setButtonText("Send");
+
+          // Second setTimeout to reset the button text after an additional delay
+          setTimeout(() => {
+            setStatus({});
+          }, 1500); // Delay of 1800 milliseconds (1.8 seconds) to reset button text
+
+        }, 1300);
+
+        
+        return; // Do not proceed with form submission
       }
+      setButtonText("Sending...");
+    
+      // Proceed with form submission if all fields are filled
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+        .then((result) => {
+            setStatus({
+              success: true,
+              message: "Message sent successfully! Santa will reply shortly :)"
+            });
+
+            // Reset status after 5 seconds
+            setTimeout(() => {
+              setStatus({});
+            }, 2500);
+
+            form.current.reset(); //reset the form so it's empty 
+            setButtonText("Send"); 
+                                                                                                              
+        }, (error) => {
+            console.log(error.text);
+            setStatus({ 
+              success: false, 
+              message: "Oops! Something went wrong. Please try again." 
+            });
+
+            setButtonText("Send");
+
+            // Reset status after 5 seconds
+            setTimeout(() => {
+              setStatus({});
+            }, 5000);
+        });
     };
     
-    
+  
+     
+  
+      
 
     return (
       <section className="contact" id="connect">
@@ -74,59 +92,52 @@ export const Contact = () => {
             </Col>
             <Col size={12} md={6}>
               <h2>Get In Touch</h2>
-              <form>
+              <form ref={form}>
                 <Row>
                   <Col sm={6} className="px-1">
                     <input
                       type="text"
-                      value={formDetails.firstName}
+                      name="from_firstname"
                       placeholder="First Name"
-                      onChange={(e) =>
-                        onFormUpdate("firstName", e.target.value)
-                      }
                     />
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
                       type="text"
-                      value={formDetails.lastName}
+                      name="from_lastname"
                       placeholder="Last Name"
-                      onChange={(e) => onFormUpdate("lastName", e.target.value)}
                     />
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
                       type="email"
-                      value={formDetails.email}
+                      name="from_email"
                       placeholder="Email Address"
-                      onChange={(e) => onFormUpdate("email", e.target.value)}
                     />
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
                       type="tel"
-                      value={formDetails.phone}
+                      name="from_phonenum"
                       placeholder="Phone Number"
-                      onChange={(e) => onFormUpdate("phone", e.target.value)}
                     />
                   </Col>
                   <Col size={12} className="px-1">
                     <textarea
                       rows="6"
-                      value={formDetails.message}
+                      name="message"
                       placeholder="Message"
-                      onChange={(e) => onFormUpdate("message", e.target.value)}
                     ></textarea>
-                    <button type="submit" onClick={handleSubmit}>
-                      <span>{buttonText}</span>
-                    </button>
-                  </Col>
-                  {
+                     {
                       status.message &&
                       <Col>
                         <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                       </Col>
                     }
+                    <button type="submit" onClick={handleSubmit}>
+                      <span>{buttonText}</span>
+                    </button>
+                  </Col>
                 </Row>
               </form>
             </Col>
