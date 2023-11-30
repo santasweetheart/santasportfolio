@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {ArrowRightCircle} from "react-bootstrap-icons";
 import headerImg from "../assets/img/websiteicon.svg";
@@ -35,10 +35,10 @@ export const Banner = () => {
         }
 
         //If not deleting and full work is typed out, switch to deleting mode , move to next word and selt delta to 500 to make typing faster 
-        if(!isDeleting && updatedText == fullText) {
+        if(!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
             setDelta(PERIOD);
-        } else if(isDeleting && updatedText == "") {
+        } else if(isDeleting && updatedText === "") {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
             setDelta(500);
@@ -54,7 +54,7 @@ export const Banner = () => {
                     <span className="tagline">Hi! Welcome to my portfolio :)</span>
                     <h1>{"My name is Santa. "} <br/><span className="txt-rotate"> <span className="wrap">{text}</span></span></h1>
                     <p>A usability enthusiast and tech-obsessed nerd. Building and designing human-centered digital experiences is where I shine. Currently, I'm on the lookout for new opportunities where I can contribute, grow, and continue to turn creative ideas into reality.</p>
-                    <a href="https://drive.google.com/file/d/1fUlc6HNkd9doMpCJcMKoJ-WnzBuoLqrR/view?usp=sharing" target="_blank" className="no-underline"><button>My Resume <ArrowRightCircle size={25}/></button></a>
+                    <a href="https://drive.google.com/file/d/1fUlc6HNkd9doMpCJcMKoJ-WnzBuoLqrR/view?usp=sharing" target="_blank" rel="noreferrer" className="no-underline"><button>My Resume <ArrowRightCircle size={25}/></button></a>
                 </Col>
                 <Col xs={12} md={6} xl={5}>
                     <img src={headerImg} alt="Header Img"/>

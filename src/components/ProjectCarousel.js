@@ -1,4 +1,4 @@
-import {Col, Carousel, CarouselItem } from "react-bootstrap";
+import {Col, Carousel} from "react-bootstrap";
 
 export const ProjectCarousel = ({images, youtube}) => {
   return (
@@ -6,14 +6,14 @@ export const ProjectCarousel = ({images, youtube}) => {
     <Col xs={12} md={9} className="carousel-container">
       <Carousel className="carousel" variant="dark">
           {images.map((image, index) => (
-              <Carousel.Item key={index}><img src={image}/></Carousel.Item>
+              <Carousel.Item key={index}><img src={image} alt={image}/></Carousel.Item>
             ))
           }
 
           {youtube && (
              <Carousel.Item>
              <div className="ratio ratio-4x3">
-               <iframe
+               <iframe title={"video link" + youtube}
                  src={youtube}
                  frameborder="0"
                  allowFullScreen
