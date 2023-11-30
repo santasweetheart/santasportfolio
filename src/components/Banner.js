@@ -8,8 +8,8 @@ export const Banner = () => {
     const [isDeleting, setIsDeleting] = useState(false); //whetehr word is deleting or not
     const toRotate = ["A UI/UX Designer","A Web Developer", "A Full Stack Developer", "A Mobile App Developer"] //list of words to display on screen in rotated manner
     const [text, setText] = useState(''); //the current text being displayed on screen
-    const [delta, setDelta] = useState(300 - Math.random() * 100); //Determines how fast one letter appears after the first one is typed or deleted. It starts with a random value between 200 and 300.
-    const PERIOD = 2000; //Defines the time interval between each word being typed out (2 seconds).
+    const [delta, setDelta] = useState(250 - Math.random() * 100); //Determines how fast one letter appears after the first one is typed or deleted. It starts with a random value between 250 and 300.
+    const PERIOD = 1000; //Defines the time interval between each word being typed out (2 seconds).
    
    //initiatiate the typing animation
     useEffect(() => {
