@@ -26,8 +26,8 @@
     "web-vitals": "^2.1.4"
   },
   "engines": {
-    "node": "16.x",
-    "npm": "8.x"
+    "npm": "10.1.0",
+    "node": "20.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
